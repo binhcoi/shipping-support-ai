@@ -1,0 +1,30 @@
+# Local Bundler configuration.
+/.bundle/
+
+# Environment files may contain secrets; commit only sanitized templates.
+/.env*
+!/.env*.example
+!/.env*.erb
+
+# Rails encryption keys. Encrypted credentials can remain in Git.
+/config/master.key
+/config/credentials/*.key
+
+# Runtime logs and temporary files, preserving directory placeholders.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+/tmp/pids/*
+!/tmp/pids/
+!/tmp/pids/.keep
+
+# Uploaded files and temporary test storage.
+/storage/*
+!/storage/.keep
+/tmp/storage/*
+!/tmp/storage/
+!/tmp/storage/.keep
+
+# Local project handoff.
+/Shipping_Support_AI_Project_Handoff.md
