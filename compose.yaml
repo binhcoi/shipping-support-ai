@@ -4,17 +4,28 @@ services:
     restart: unless-stopped
     environment:
       POSTGRES_USER: shipping_ai
-      POSTGRES_PASSWORD: ${PGPASSWORD:?Set PGPASSWORD in your environment file}
       POSTGRES_DB: shipping_support_ai_development
     ports:
       - "5432:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - ./pg_db:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U shipping_ai -d shipping_support_ai_development"]
       interval: 5s
       timeout: 5s
       retries: 5
-
-volumes:
-  postgres_data:
+    env_file:
+      - ./.env.development.local
+  ssai:
+    build:
+      context: ./
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./:/rails
+    depends_on:
+      postgres:
+        condition: service_healthy
+    env_file:
+      - ./.env.development.local
+    ports:
+      - 3000:3000

@@ -26,5 +26,8 @@
 !/tmp/storage/
 !/tmp/storage/.keep
 
+# Local PostgreSQL data.
+/pg_db/
+
 # Local project handoff.
 /Shipping_Support_AI_Project_Handoff.md
