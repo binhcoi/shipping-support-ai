@@ -24,7 +24,7 @@ the model for interpretation, tool selection, and response generation.
 
 | Milestone | Scope | Status |
 | --- | --- | --- |
-| 0. Rails foundation | API setup, PostgreSQL, persistence, and automated tests | In progress |
+| 0. Rails foundation | API setup, PostgreSQL, persistence, and automated tests | Complete |
 | 1. LLM integration | Ollama chat, conversations, prompts, context, timeouts, and inference metrics | Planned |
 | 2. Tool calling | Structured arguments, authorized data lookup, tool execution, and result handling | Planned |
 | 3. Embeddings and RAG | Policy documents, chunking, embeddings, pgvector retrieval, and source references | Planned |
@@ -33,9 +33,9 @@ the model for interpretation, tool selection, and response generation.
 
 ## Current status
 
-The Rails foundation includes a JSON health endpoint, Shipment persistence with
-model validations and database constraints, and automated tests. LLM integration
-has not started.
+Milestone 0 is complete. The Rails foundation includes a JSON health endpoint,
+Shipment persistence with model validations and database constraints, and
+automated tests. LLM integration has not started.
 
 Current stack: Ruby 3.3.7, Rails 7.2.4 (API-only), and PostgreSQL 17. Ollama,
 pgvector retrieval, and Redis/Sidekiq are planned.

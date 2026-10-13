@@ -29,5 +29,6 @@
 # Local PostgreSQL data.
 /pg_db/
 
-# Local project handoff.
+# Local project handoff and milestone reports.
 /Shipping_Support_AI_Project_Handoff.md
+/reports/milestone-*.md
