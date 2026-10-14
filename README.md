@@ -37,7 +37,7 @@ Milestone 0 is complete. The Rails foundation includes a JSON health endpoint,
 Shipment persistence with model validations and database constraints, and
 automated tests. LLM integration has not started.
 
-Current stack: Ruby 3.3.7, Rails 7.2.4 (API-only), and PostgreSQL 17. Ollama,
+Current stack: Ruby 3.3.7, Rails 8.1.4 (API-only), and PostgreSQL 17. Ollama,
 pgvector retrieval, and Redis/Sidekiq are planned.
 
 ## Configuration and setup
