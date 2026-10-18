@@ -33,6 +33,10 @@
 # Ignore local PostgreSQL data.
 /pg_db/
 
+# Ignore the private project handoff and milestone reports.
+/Shipping_Support_AI_Project_Handoff.md
+/reports/milestone-*.md
+
 # Ignore CI service files.
 /.github
 
