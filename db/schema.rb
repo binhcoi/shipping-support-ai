@@ -10,9 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2026_10_13_213914) do
+ActiveRecord::Schema[8.1].define(version: 2026_10_19_231143) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension "pg_catalog.plpgsql"
+
+  create_table "conversations", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.bigint "conversation_id", null: false
+    t.string "role", null: false
+    t.text "content", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["conversation_id", "created_at", "id"], name: "index_messages_on_conversation_id_and_created_at_and_id"
+  end
 
   create_table "shipments", force: :cascade do |t|
     t.string "tracking_number", null: false
@@ -20,4 +35,6 @@ ActiveRecord::Schema[7.2].define(version: 2026_10_13_213914) do
     t.datetime "updated_at", null: false
     t.index ["tracking_number"], name: "index_shipments_on_tracking_number", unique: true
   end
+
+  add_foreign_key "messages", "conversations"
 end
